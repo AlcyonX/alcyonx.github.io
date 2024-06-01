@@ -1,13 +1,61 @@
 
 @font-face {
     font-family: minecraft;
-    src: url(Minecraft.ttf);
+    src: url(Minecraft.otf);
 }
 
-body {
+.a {
     background-image: url("Images/wallpaper.jpg");
-    background-size:1000px;
+    background-size:100px;
+    size: 100vb;
 
+}
+
+.b {
+    background-image: url("Images/wallpaper2.jpg");
+    background-size:100px;
+    size: 100vb;
+
+}
+
+.vt {
+    display: grid;
+    place-items: center;
+    width: 500px;
+    margin: auto;
+}
+
+.vt h1 {
+    font-family: minecraft;
+    font-size: 55px;
+    margin: 10px;
+    color: white; 
+}
+
+.bt {
+    display: grid;
+    place-items: center;
+    margin: auto;
+}
+
+.bt h1 {
+    font-family: minecraft;
+    font-size: 40px;
+    margin: 10px;
+    color: white; 
+    background-color: black;
+    overflow: hidden;
+    padding: 10px;
+}
+
+
+.searchbar {
+    font-family: minecraft;
+    font-size: 25px;
+    padding: 5px;
+    color: white; 
+    background-color: black;
+    border-style: solid;
 }
 
 .topnav {
@@ -26,7 +74,6 @@ body {
     font-size: 125%;
     margin: 5px;
     font-family: minecraft;
-    font-weight:initial;
     color: white;
     background-color: black;
     transition: 0.5s;
@@ -61,6 +108,7 @@ body {
     font-family: minecraft;
     font-size: 55px;
     margin: 10px;
+    color: white;
 }
 
 .pfp p {
@@ -68,6 +116,7 @@ body {
     font-size: 25px;
     transition: 1s;
     margin: 25px;
+    color: white;
 }
 
 .pfp a {
@@ -90,54 +139,40 @@ body {
     color: black;
 }
 
-
-
-
-
-
-.dernière-vidéo {
-    background-color: black;
-    padding: 0px;
-    overflow: hidden;
-    
+ol {
+    display: grid;
+    place-items: center;
+    margin: auto;
+    padding: 10px;
 }
 
-.dernière-vidéo iframe {
-    width: 100%;
-    height: 500px;
-}
 
-.dernière-vidéo h1 {
-    color: white;
-    display: flex;
-    justify-content: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+
+
 
 .vidéo {
 
     overflow: hidden;
     padding: 5px;
-    background-color: dodgerblue;
-    border-radius: 10px;
+    background-color: rgba(0, 128, 255, 0.8);
     transition: 0.5s;
+    width: 75%;
 
 }
 
 .vidéo:hover {
-    padding: 10px;
+    rotate: 2deg;
 }
 
 .vidéo h2 a {
 
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: minecraft;
     text-decoration: none;
     font-size: larger;
     padding-left: 10px;
     text-align:center;
     color: white;
-    transition: 500ms;
-    font-size-adjust:0.5; 
+    transition: 0.5s;
 }
 
 

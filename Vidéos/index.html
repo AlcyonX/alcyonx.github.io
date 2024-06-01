@@ -6,21 +6,122 @@
     
     <link rel="stylesheet" href="../style.css">
     <title>Liste des Pages HTML</title>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7964715695146094"
+     crossorigin="anonymous"></script>
+
 </head>
-<body>
-    <h1>Vidéos</h1>
+<body class="b">
 
-    <div class="list">
+    <ul class="topnav">
 
-        <div class="vidéo" >
+        <img class="x" src="../Images/X.png" alt="">
 
+        <a href="../index.html">Accueil</a>
+
+        <a href="#">Videos</a>
+
+        <a href="">A propos</a>
+
+
+    </ul>
+
+    <div class="vt">
+        <h1>Videos</h1>
+
+        <input id="searchbar" class="searchbar" onkeyup="search()" type="text"
+        name="search" placeholder="Chercher une video..."></input>
+    </div>
+
+    <ol id="list">
+
+        <li class="vidéo">
             <img class="image" src="../Images/studio.png" alt="">
             <h2><a href="">Comment installer roblox studio ?</a></h2>
-            
+        </li>
+        <li class="vidéo">
+            <img class="image" src="../Images/studio.png" alt="">
+            <h2><a href="">Comment installer roblox studio ?</a></h2>
+        </li>
+        <li class="vidéo">
+            <img class="image" src="../Images/studio.png" alt="">
+            <h2><a href="">Comment installer roblox studio ?</a></h2>
+        </li>
+        <li class="vidéo">
+            <img class="image" src="../Images/studio.png" alt="">
+            <h2><a href="">Comment installer roblox studio ?</a></h2>
+        </li>
+        <li class="vidéo">
+            <img class="image" src="../Images/studio.png" alt="">
+            <h2><a href="">Comment installer roblox studio ?</a></h2>
+        </li>
+        <li class="vidéo">
+            <img class="image" src="../Images/studio.png" alt="">
+            <h2><a href="">Comment installer roblox studio ?</a></h2>
+        </li>
+        <li class="vidéo">
+            <img class="image" src="../Images/studio.png" alt="">
+            <h2><a href="">Comment installer roblox studio ?</a></h2>
+        </li>
+        <li class="vidéo">
+            <img class="image" src="../Images/studio.png" alt="">
+            <h2><a href="">Comment installer roblox studio ?</a></h2>
+        </li>
+        <li class="vidéo">
+            <img class="image" src="../Images/studio.png" alt="">
+            <h2><a href="">Comment installer roblox studio ?</a></h2>
+        </li>
+        <li class="vidéo">
+            <img class="image" src="../Images/studio.png" alt="">
+            <h2><a href="">Comment installer roblox studio ?</a></h2>
+        </li>
+        <li class="vidéo">
+            <img class="image" src="../Images/studio.png" alt="">
+            <h2><a href="">Comment installer roblox studio ?</a></h2>
+        </li>
+        <li class="vidéo">
+            <img class="image" src="../Images/studio.png" alt="">
+            <h2><a href="">Comment installer roblox studio ?</a></h2>
+        </li>
+        <li class="vidéo">
+            <img class="image" src="../Images/studio.png" alt="">
+            <h2><a href="">Comment installer roblox studio ?</a></h2>
+        </li>
+        <li class="vidéo">
+            <img class="image" src="../Images/studio.png" alt="">
+            <h2><a href="">Comment installer roblox studio ?</a></h2>
+        </li>
+        
+    </ol>
 
-        </div>
 
-    </div>
+    <script>
+        
+        function search() {
+        let input = document.getElementById('searchbar').value
+        input=input.toLowerCase();
+        let x = document.getElementsByClassName('vidéo');
+      
+        for (i = 0; i < x.length; i++) { 
+            if (!x[i].innerHTML.toLowerCase().includes(input)) {
+                x[i].style.display="none";
+            }
+        else {
+            x[i].style.display="list-item";                 
+        }
+
+        if (input=="rickroll") {
+            window.location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+        }
+
+        if (input=="freeze") {
+            window.location.replace("https://cdn3.emoji.gg/emojis/9040-freezing-emoji.png");
+        }
+
+        }
+        }
+
+    </script>
 
 </body>
 </html>
