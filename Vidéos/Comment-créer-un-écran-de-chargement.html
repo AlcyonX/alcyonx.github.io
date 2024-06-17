@@ -1,0 +1,84 @@
+
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Comment créer un écran de chargement ?</title>
+        <link rel="stylesheet" href="../style.css">
+        <link rel="icon" href="../Images/X.png">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script> <script>hljs.highlightAll();</script>
+
+    </head>
+    <body class="c">
+        <ul class="topnav">
+            <img class="x" src="../Images/X.png" alt="">
+            <a href="../index.html">Accueil</a>
+            <a href="index.html">Vidéos</a>
+            <a href="../about.html">À propos</a>
+        </ul>
+        
+        <div class="bt">
+            <h1>Comment créer un écran de chargement ?</h1>
+
+            <h2>Vidéo
+</h2>
+
+            <iframe style="width: 75%; height: 500px; border: 0px; padding-left: 25px; padding-right: 25px; background-color: black; overflow: hidden;"
+            src="https://www.youtube.com/embed/6Rzbz-xfqAI?autoplay=1&mute=1">
+            </iframe>
+
+            <h2>Code</h2>
+
+            <div class="code"><pre><code class="hljs language-lua"
+>local Players = game:GetService("Players")
+local ReplicatedFirst = game:GetService("ReplicatedFirst")
+local TweenService = game:GetService("TweenService")
+ 
+local player = Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+ 
+local screenGui = Instance.new("ScreenGui")
+screenGui.IgnoreGuiInset = true
+screenGui.Parent = playerGui
+local textLabel = Instance.new("TextLabel")
+textLabel.Size = UDim2.new(1, 0, 1, 0)
+textLabel.BackgroundColor3 = Color3.fromRGB(0, 20, 40)
+textLabel.Font = Enum.Font.GothamSemibold
+textLabel.TextColor3 = Color3.new(0.8, 0.8, 0.8)
+textLabel.Text = "Loading"
+textLabel.TextSize = 28
+textLabel.Parent = screenGui
+local loadingRing = Instance.new("ImageLabel")
+loadingRing.Size = UDim2.new(0, 256, 0, 256)
+loadingRing.BackgroundTransparency = 1
+loadingRing.Image = "rbxassetid://4965945816"
+loadingRing.AnchorPoint = Vector2.new(0.5, 0.5)
+loadingRing.Position = UDim2.new(0.5, 0, 0.5, 0)
+loadingRing.Parent = screenGui
+ 
+ReplicatedFirst:RemoveDefaultLoadingScreen()
+ 
+local tweenInfo = TweenInfo.new(4, Enum.EasingStyle.Linear, Enum.EasingDirection.In, -1)
+local tween = TweenService:Create(loadingRing, tweenInfo, {Rotation = 360})
+tween:Play()
+ 
+task.wait(5)             
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+end
+screenGui:Destroy()</code></pre></div>
+
+            <h2>Et voilà !</h2>
+            <p>
+            Bravo ! Vous avez terminé !
+            <img class="icon" src="../Images/heart.png" style="padding:0px; height: 20px; width: 20px;">
+            <img class="icon" src="../Images/heart.png" style="padding:0px; height: 20px; width: 20px;">
+            <img class="icon" src="../Images/heart.png" style="padding:0px; height: 20px; width: 20px;">
+            </p>
+
+        </div>
+    </body>
+    </html>
+    

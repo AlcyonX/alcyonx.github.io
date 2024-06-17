@@ -1,0 +1,82 @@
+
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Comment faire un tremblement de terre ?</title>
+        <link rel="stylesheet" href="../style.css">
+        <link rel="icon" href="../Images/X.png">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script> <script>hljs.highlightAll();</script>
+
+    </head>
+    <body class="c">
+        <ul class="topnav">
+            <img class="x" src="../Images/X.png" alt="">
+            <a href="../index.html">Accueil</a>
+            <a href="index.html">Vidéos</a>
+            <a href="../about.html">À propos</a>
+        </ul>
+        
+        <div class="bt">
+            <h1>Comment faire un tremblement de terre ?</h1>
+
+            <h2>Vidéo
+</h2>
+
+            <iframe style="width: 75%; height: 500px; border: 0px; padding-left: 25px; padding-right: 25px; background-color: black; overflow: hidden;"
+            src="https://www.youtube.com/embed/UJSdlUKXf9k?autoplay=1&mute=1">
+            </iframe>
+            
+            <h2>Code #1</h2>
+
+            <div class="code"><pre><code class="hljs language-lua">function EarthQuake()
+	local work = workspace:GetDescendants()
+	for i = 1, #work do
+		if work[i]:isA("Part") and work[i].Name ~= "Baseplate" and work[i]:isA("SpawnLocation") == false then
+			local killscript = script.Script:Clone()
+			killscript.Parent = work[i]
+			killscript.Enabled = true
+			work[i].Anchored = false
+			wait()
+		elseif work[i]:isA("Snap") or work[i]:isA("Weld") then
+			work[i]:Destroy()
+		elseif work[i]:isA("SpawnLocation") then
+			work[i].CanCollide = false
+		end
+	end
+end
+EarthQuake()</code></pre></div>
+
+            <h2>Code #2</h2>
+
+            <div class="code"><pre><code class="hljs language-lua">local degat = 5 
+local AntiLag = 20
+local de = false
+
+script.Parent.Touched:Connect(function(hit)
+    local H = hit.Parent:FindFirstChild("Humanoid")
+    if H ~= nil and de == false then
+        de = true
+        H:TakeDamage(degat)
+        wait(3)
+        de = false
+    end
+end)
+ 
+wait(AntiLag)
+script.Parent:Destroy()</code></pre></div>
+
+            <h2>Et voilà !</h2>
+            <p>
+            Bravo ! Vous avez terminé !
+            <img class="icon" src="../Images/heart.png" style="padding:0px; height: 20px; width: 20px;">
+            <img class="icon" src="../Images/heart.png" style="padding:0px; height: 20px; width: 20px;">
+            <img class="icon" src="../Images/heart.png" style="padding:0px; height: 20px; width: 20px;">
+            </p>
+
+        </div>
+    </body>
+    </html>
+    
