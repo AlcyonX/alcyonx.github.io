@@ -1,105 +1,52 @@
-import os
-import re
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>À propos - Alcyon X</title>
+    <link rel="icon" href="Images/X.png">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7964715695146094"
+     crossorigin="anonymous"></script>
+</head>
+<body class="a">
+    <ul class="topnav">
 
-# Liste des titres H2
-titres_h2 = [
-    "Comment installer roblox studio ?",
-    "Comment publier son jeu roblox ?",
-    "Comment freeze un objet ?",
-    "Comment créer une playlist de musique ?",
-    "Comment empecher le joueur de sauter",
-    "Comment avoir hd admin ?",
-    "Comment créer un badge de bienvenue ?",
-    "Comment recréer Only UP ?",
-    "Comment créer un feu ?",
-    "Comment spawn un vehicule ?",
-    "Comment faire voler le joueur ?",
-    "Comment créer un système de transformation ?",
-    "Comment créer un screamer ?",
-    "Comment créer une safe zone ?",
-    "Comment rendre son jeu ultra réaliste ?",
-    "Comment créer un bateau ?",
-    "Comment générer une map ?",
-    "Comment créer une map réaliste ?",
-    "Comment créer un cycle jour et nuit ?",
-    "Comment créer un tueur ?",
-    "Comment créer un avatar de départ ?",
-    "Comment créer un écran de chargement ?",
-    "Comment réapparaitre instantanément ?",
-    "Comment mettre une musique de fond ?",
-    "Comment faire un tremblement de terre ?",
-    "Comment faire un double saut ?",
-    "Comment créer de l'argent ?",
-    "Comment créer une invasion de zombies ?",
-    "Comment créer FLOOR IS LAVA ?",
-    "Comment créer des TSUNAMI ?",
-    "Comment créer des équipes ?",
-    "Comment créer un parcours infini ?",
-    "Comment appuyer sur E pour récuperer un objet ?",
-    "Comment créer un 'KILL PART' ?"
-]
+        <img class="x" src="Images/X.png" alt="">
 
-# Fonction pour créer des noms de fichiers valides
-def create_valid_filename(title):
-    # Remplace les espaces par des tirets
-    filename = title.replace(' ', '-')
-    # Retire les caractères spéciaux
-    filename = re.sub(r'[^\w\-]', '', filename)
-    return filename
+        <a href="index.html">Accueil</a>
 
-# Crée des fichiers HTML pour chaque titre
-for titre in titres_h2:
-    # Crée un nom de fichier valide
-    filename = create_valid_filename(titre) + '.html'
-    # Contenu du fichier HTML
-    html_content = f"""
-    <!DOCTYPE html>
-    <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{titre}</title>
-        <link rel="stylesheet" href="../style.css">
-        <link rel="icon" href="../Images/X.png">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script> <script>hljs.highlightAll();</script>
+        <a href="Vidéos/index.html">Vidéos</a>
 
-    </head>
-    <body>
-        <ul class="topnav">
-            <img class="x" src="../Images/X.png" alt="">
-            <a href="../index.html">Accueil</a>
-            <a href="index.html">Vidéos</a>
-            <a href="">À propos</a>
-        </ul>
-        
-        <div class="bt">
-            <h1>{title}</h1>
+        <a href="about.html">À propos</a>
 
-            <h2>Vidéo
-</h2>
+    </ul>
 
-            <iframe style="width: 75%; height: 500px; border: 0px; padding-left: 25px; padding-right: 25px; background-color: black; overflow: hidden;"
-            src="https://www.youtube.com/embed/GrwZw_uqLv8?autoplay=1&mute=1">
-            </iframe>
+    <div class="pfp">
+        <img src="Images/X.png" alt="">
+        <h1>Alcyon X</h1>
+    </div>
 
-            <h2>Lien</h2>
-            <a href=""> <img class="icon" src="../Images/link.png" style="padding:0px; padding-right:10px;">Installer Roblox Studio</a>
 
-            <h2>Et voilà !</h2>
-            <p>
-            Bravo ! Vous avez termine !
-            <img class="icon" src="../Images/heart.png" style="padding:0px; height: 20px; width: 20px;">
-            <img class="icon" src="../Images/heart.png" style="padding:0px; height: 20px; width: 20px;">
-            <img class="icon" src="../Images/heart.png" style="padding:0px; height: 20px; width: 20px;">
-            </p>
+    <div class="about">
 
-        </div>
-    </body>
-    </html>
-    """
-    # Écrit le contenu dans le fichier
-    with open(filename, 'w', encoding='utf-8') as file:
-        file.write(html_content)
+        <h1>À propos d'AlcyonX</h1>
+        <p>
+            J'aime tout ce qui touche aux ordinateurs, comme la programmation par exemple.
+            Je veux rendre la programmation aussi accessible que possible.
+            Grâce à ma chaîne YouTube et à ce site que j'ai conçu moi-même, cela sera possible.
+            Et ce sera encore plus réalisable grâce à une communauté de curieux et d'autodidactes comme moi.
+        </p>
+        <h1>Ici, tu peux...</h1>
+        <p>
+            Apprendre, et ce, 100% gratuitement. Tu auras un grand nombre de possibilités de tutoriels.
+            Mais si tu préfères te détendre et regarder une vidéo, il y a ma chaîne.
+            Encore mieux, tu veux discuter avec d'autres personnes qui partagent ta même passion ? Il y a la Team X (Discord).
+            Et encore, tu veux jouer à des jeux ? Il y a Cyon Studio (Roblox).
+        </p>
 
-print("Les fichiers HTML ont été créés avec succès.")
+        <h1>Et voilà !</h1>
+    </div>
+
+</body>
+</html>
