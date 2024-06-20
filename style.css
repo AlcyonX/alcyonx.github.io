@@ -5,7 +5,7 @@
 }
 
 body {
-    position:sticky;
+    background-attachment: fixed;
 }
 
 .a {
