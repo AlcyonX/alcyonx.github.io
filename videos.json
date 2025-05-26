@@ -2,9 +2,18 @@
   {
     "title": "Comment afficher les FPS?",
     "img":"images/roblox.png",
-    "language":"lua-language",
+    "category":"Roblox Studio",
+    "date":"17 mai 2025",
+    "description":"Lorsque l’on développe un jeu sur Roblox Studio, il est essentiel de surveiller les performances pour garantir une expérience fluide aux joueurs. L’un des indicateurs les plus importants à suivre est le nombre de FPS (frames per second), qui permet de mesurer la fluidité d’affichage de votre jeu en temps réel. Dans ce tutoriel, nous allons voir comment afficher les FPS directement dans Roblox Studio, à l’aide d’un petit script Lua. Que vous soyez débutant ou développeur confirmé, cette fonctionnalité vous aidera à identifier les éventuels ralentissements et à optimiser votre jeu plus efficacement.",
+    "explanation":"Ce script sert à afficher le nombre de FPS (images par seconde) sur l'écran pendant que le jeu fonctionne. Il commence par récupérer un service appelé RunService, qui permet d'exécuter du code à chaque image du jeu. Ensuite, il crée un élément graphique à l'écran (ScreenGui) et y ajoute une étiquette de texte (TextLabel) qui affichera les FPS. La taille et la position de l'étiquette sont définies pour qu'elle apparaisse en haut à gauche de l'écran. Le fond de l'étiquette est transparent, le texte est blanc, il s'adapte automatiquement à la taille, et la police utilisée est en gras. Le texte de départ affiché est 'FPS: 0'. Le script utilise deux variables pour compter combien d'images sont dessinées et combien de temps passe. À chaque image, il augmente le compteur d'images et ajoute le temps écoulé depuis la dernière image. Quand une seconde complète est passée, il calcule le nombre moyen d'images par seconde (FPS), met à jour le texte affiché, puis remet les compteurs à zéro. Le résultat est une mise à jour automatique du nombre de FPS affiché à l'écran, toutes les secondes.",
     "link": "https://www.youtube.com/embed/nxmuFw0Ksz8",
-    "code": "local RunService = game:GetService(\"RunService\")\n-- FPS\nlocal screen = Instance.new(\"ScreenGui\", script.Parent)\nlocal fpsLabel = Instance.new(\"TextLabel\", screen)\nfpsLabel.Size = UDim2.new(0, 200, 0, 50)\nfpsLabel.Position = UDim2.new(0, 10, 0, 10)\nfpsLabel.BackgroundTransparency = 1\nfpsLabel.TextColor3 = Color3.new(1, 1, 1)\nfpsLabel.TextScaled = true\nfpsLabel.Font = Enum.Font.SourceSansBold\nfpsLabel.Text = \"FPS: 0\"\n-- Variables\nlocal frameCount = 0\nlocal timePassed = 0\n-- Mise à jour des FPS toutes les secondes\nRunService.RenderStepped:Connect(function(deltaTime)\n    frameCount += 1\n    timePassed += deltaTime\n    if timePassed >= 1 then\n        local fps = math.floor(frameCount / timePassed)\n        fpsLabel.Text = \"FPS: \" .. fps\n        frameCount = 0\n        timePassed = 0\n    end\nend)"
+    "content": [
+        {
+          "type":"code",
+          "language":"lua-language",
+          "value":"local RunService = game:GetService(\"RunService\")\n-- FPS\nlocal screen = Instance.new(\"ScreenGui\", script.Parent)\nlocal fpsLabel = Instance.new(\"TextLabel\", screen)\nfpsLabel.Size = UDim2.new(0, 200, 0, 50)\nfpsLabel.Position = UDim2.new(0, 10, 0, 10)\nfpsLabel.BackgroundTransparency = 1\nfpsLabel.TextColor3 = Color3.new(1, 1, 1)\nfpsLabel.TextScaled = true\nfpsLabel.Font = Enum.Font.SourceSansBold\nfpsLabel.Text = \"FPS: 0\"\n-- Variables\nlocal frameCount = 0\nlocal timePassed = 0\n-- Mise à jour des FPS toutes les secondes\nRunService.RenderStepped:Connect(function(deltaTime)\n    frameCount += 1\n    timePassed += deltaTime\n    if timePassed >= 1 then\n        local fps = math.floor(frameCount / timePassed)\n        fpsLabel.Text = \"FPS: \" .. fps\n        frameCount = 0\n        timePassed = 0\n    end\nend)"
+        }
+    ]
   }
 
 ]
