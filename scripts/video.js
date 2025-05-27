@@ -19,7 +19,6 @@ fetch('videos.json')
 
     document.getElementById('title').innerHTML = video.title;
     document.getElementById('description').innerHTML = video.description;
-    document.getElementById('explanation').innerHTML = video.explanation;
 
     // Embed YouTube iframe preview
     const iframe = document.createElement('iframe');

@@ -89,6 +89,7 @@ h3, h4 {
     color: #FFFFFF;
     padding: 1rem;
     margin: 1rem;
+    margin-top: 0rem;
     background-color: #000000;
     font-size: clamp(0.8rem, 1.8vw, 1.8rem);
     width: calc(100% - 4rem);
@@ -104,6 +105,8 @@ h4 {
     border-style: dashed;
     width: calc(100% - 4rem - 10px);
     max-width: calc(700px - 2rem - 10px);
+    margin-top: -1rem;
+    border-top: none;
 
 }
 
@@ -214,8 +217,8 @@ h4 {
     padding: 1rem;
     border: 5px dashed #000000;
     border-top: none;
-    letter-spacing: 2px;
-    line-height: 1.8;
+    letter-spacing: 1px;
+    line-height: 1.5;
     margin-top: -1rem;
     width: calc(100% - 4rem - 10px);
     max-width: calc(700px - 2rem - 10px );
@@ -234,9 +237,10 @@ h4 {
 /* Profile picture */
 .pfp {
     border-radius: 100%;
-    height: clamp(15rem, 25vw, 20rem);
+    height: clamp(10rem, 25vw, 15rem);
     margin: 1rem;
-    margin-top: 7rem;
+    margin-top: 6rem;
+    margin-bottom: -1rem;
 }
 
 /* Links */
@@ -295,6 +299,13 @@ pre {
     margin-top: -2rem;
     width: calc(100% - 2rem);
     max-width: 700px;
+}
+
+#code {
+    font-size: clamp(0.8rem, 1.5vw, 1.7rem);
+    font-family: "Minecraft";
+    letter-spacing: 1px;
+    line-height: 1.5;
 }
 
 /* Wizard */
