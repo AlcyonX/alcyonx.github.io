@@ -302,9 +302,6 @@ pre {
     margin-top: -2rem;
     width: calc(100% - 2rem);
     max-width: 700px;
-}
-
-#code {
     font-size: clamp(0.8rem, 1.5vw, 1.7rem);
     font-family: "Minecraft";
     letter-spacing: 1px;
