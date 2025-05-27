@@ -1,0 +1,90 @@
+
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Comment créer un bateau ?</title>
+        <link rel="stylesheet" href="../style.css">
+        <link rel="icon" href="../Images/X.png">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script> <script>hljs.highlightAll();</script>
+
+    </head>
+    <body class="c">
+        <ul class="topnav">
+            <img class="x" src="../Images/X.png" alt="">
+            <a href="../index.html">Accueil</a>
+            <a href="index.html">Vidéos</a>
+            <a href="../about.html">À propos</a>
+        </ul>
+        
+        <div class="bt">
+            <h1>Comment créer un bateau ?</h1>
+
+            <h2>Vidéo
+</h2>
+
+            <iframe style="width: 75%; height: 500px; border: 0px; padding-left: 25px; padding-right: 25px; background-color: black; overflow: hidden;"
+            src="https://www.youtube.com/embed/KukwheRXiGY?autoplay=1&mute=1">
+            </iframe>
+
+            <h2>Code</h2>
+                
+            <div class="code"><pre><code class="hljs language-lua"
+>local Seat = script.Parent
+local Attachement = Instance.new("Attachment", Seat)
+Attachement.Orientation = Vector3.new(0,90,0)
+Attachement.Axis = Vector3.new(0,0,-1)
+local AngularVelocity = Instance.new("AngularVelocity",script)
+AngularVelocity.Attachment0 = Attachement
+AngularVelocity.MaxTorque = 10000
+AngularVelocity.AngularVelocity = Vector3.new(0,0,0)
+AngularVelocity.Enabled = true
+local LinearVelocity = Instance.new("LinearVelocity",script)
+LinearVelocity.Attachment0 = Attachement
+LinearVelocity.VelocityConstraintMode = Enum.VelocityConstraintMode.Line
+LinearVelocity.MaxForce = 10000
+LinearVelocity.LineVelocity = 0
+LinearVelocity.RelativeTo = Enum.ActuatorRelativeTo.Attachment0
+ 
+ 
+local params = RaycastParams.new()
+params.FilterDescendantsInstances = {workspace.Terrain}
+params.FilterType = Enum.RaycastFilterType.Whitelist
+ 
+ 
+Seat.Changed:Connect(function()
+    script.AngularVelocity.AngularVelocity = Vector3.new(0, -1 * Seat.Steer, 0)
+    script.LinearVelocity.LineVelocity = 50 * Seat.Throttle
+ 
+ 
+ 
+ 
+    while task.wait() do
+        local sPos = Seat.Position + Vector3.new(0, 5, 0)
+        local ePos = Seat.Position - Vector3.new(0, 15, 0)
+        local ray = workspace:Raycast(sPos,ePos - sPos,params)
+ 
+        if ray and ray.Material == Enum.Material.Water then
+            script.AngularVelocity.Enabled = true
+            script.LinearVelocity.Enabled = true
+        else
+            script.AngularVelocity.Enabled = false
+            script.LinearVelocity.Enabled = false
+        end
+    end
+end)</code></pre></div>
+
+            <h2>Et voilà !</h2>
+            <p>
+            Bravo ! Vous avez terminé !
+            <img class="icon" src="../Images/heart.png" style="padding:0px; height: 20px; width: 20px;">
+            <img class="icon" src="../Images/heart.png" style="padding:0px; height: 20px; width: 20px;">
+            <img class="icon" src="../Images/heart.png" style="padding:0px; height: 20px; width: 20px;">
+            </p>
+
+        </div>
+    </body>
+    </html>
+    

@@ -17,9 +17,9 @@ fetch('videos.json')
       return;
     }
 
-    document.getElementById('title').textContent = video.title;
-    document.getElementById('description').textContent = video.description;
-    document.getElementById('explanation').textContent = video.explanation;
+    document.getElementById('title').innerHTML = video.title;
+    document.getElementById('description').innerHTML = video.description;
+    document.getElementById('explanation').innerHTML = video.explanation;
 
     // Embed YouTube iframe preview
     const iframe = document.createElement('iframe');
@@ -37,7 +37,7 @@ fetch('videos.json')
         if (item.type === 'code') {
 
           const h3 = document.createElement('h3');
-          h3.textContent = '</> Code';
+          h3.textContent = "</> Code : " + item.title;
 
           const pre = document.createElement('pre')
           const code = document.createElement('code')

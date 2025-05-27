@@ -1,0 +1,99 @@
+
+    <!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Comment créer une invasion de zombies ?</title>
+        <link rel="stylesheet" href="../style.css">
+        <link rel="icon" href="../Images/X.png">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script> <script>hljs.highlightAll();</script>
+
+    </head>
+    <body class="c">
+        <ul class="topnav">
+            <img class="x" src="../Images/X.png" alt="">
+            <a href="../index.html">Accueil</a>
+            <a href="index.html">Vidéos</a>
+            <a href="../about.html">À propos</a>
+        </ul>
+        
+        <div class="bt">
+            <h1>Comment créer une invasion de zombies ?</h1>
+
+            <h2>Vidéo
+</h2>
+
+            <iframe style="width: 75%; height: 500px; border: 0px; padding-left: 25px; padding-right: 25px; background-color: black; overflow: hidden;"
+            src="https://www.youtube.com/embed/fzfCyaAIFbk?autoplay=1&mute=1">
+            </iframe>
+
+            <h2>Code</h2>
+
+            <div class="code"><pre><code class="hljs language-lua">local NombreParRaid = 50
+local Delais = 30
+local TempsdunePartie = 120
+local msg1 = "Délais : "
+local msg2 = "Le Raid a commencé !"
+local msg3 = "Le Raid est Terminé !"
+local spawns = Vector3.new(150,5,0)
+ 
+function Raid(a, b ,c, d, e, f, g)
+    local msg = Instance.new("Hint")
+    msg.Parent = workspace
+    for i = 1,b do
+        msg.Text = c..b-i
+        wait(1)
+    end
+    msg.Text = msg2
+    wait(2)
+    local Zombiem = game.ReplicatedStorage:FindFirstChildOfClass("Model")
+    if Zombiem == nil then
+        warn("Attention ! Tu n'as pas mis un Zombie dans 'ReplicatedStorage' !")
+        return
+    end
+    local Zombie = Zombiem:FindFirstChild("Humanoid")
+    if Zombie == nil then
+        warn("Attention ! Ton Zombie n'est pas un 'Humanoid' !")
+        return
+    end
+ 
+    for i = 1,a do
+        local Zombies = Zombiem:Clone()
+        Zombies.Parent = workspace
+        Zombies:MoveTo(g)
+    end
+    for i = 1,e do
+        msg.Text = c..e-i
+        wait(1)
+    end
+    
+    local work = game.Workspace:GetChildren()
+    for i = 1,#work do
+        if work[i].Name == Zombiem.Name and work[i]:FindFirstChild("Humanoid") ~= nil then
+            work[i]:Destroy()
+        end
+    end
+    
+    msg.Text = f
+    wait(2)
+    msg:Destroy()
+    Raid(NombreParRaid, Delais, msg1, msg2, TempsdunePartie, msg3, spawns)
+    
+end
+ 
+Raid(NombreParRaid, Delais, msg1, msg2, TempsdunePartie, msg3, spawns)</code></pre></div>
+
+            <h2>Et voilà !</h2>
+            <p>
+            Bravo ! Vous avez terminé !
+            <img class="icon" src="../Images/heart.png" style="padding:0px; height: 20px; width: 20px;">
+            <img class="icon" src="../Images/heart.png" style="padding:0px; height: 20px; width: 20px;">
+            <img class="icon" src="../Images/heart.png" style="padding:0px; height: 20px; width: 20px;">
+            </p>
+
+        </div>
+    </body>
+    </html>
+    
