@@ -94,6 +94,9 @@ h3, h4 {
     font-size: clamp(0.8rem, 1.8vw, 1.8rem);
     width: calc(100% - 4rem);
     max-width: calc(700px - 2rem);
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
 }
 
 h4 {
@@ -136,7 +139,7 @@ h4 {
     transition: all 0.2s;
 }
 
-.navbar a:hover, .links a:hover, .menu-icon:hover, #container button:hover, #container1 button:hover {
+.navbar a:hover, .links a:hover, .menu-icon:hover, #container button:hover, #container1 button:hover, .copy-button:hover {
     background-color: #FFFFFF;
     color: black;
 }
@@ -165,7 +168,7 @@ h4 {
     flex-direction: column;
 }
 
-#container1 div button {
+#container1 div button, .copy-button {
     margin: 0.5rem;
     padding: 1rem;
     font-size: clamp(0.8rem, 1vw, 1.25rem);
@@ -311,6 +314,14 @@ pre {
 /* Wizard */
 .wizard {
     width: clamp(20rem, 76vw, 700px);
+}
+
+/* Copy button */
+
+.copy-button {
+    margin: 0rem;
+    padding: 0.5rem;
+    font-size: clamp(0.8rem, 1vw, 1rem);
 }
 
 /* Responsivity */
