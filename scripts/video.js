@@ -23,7 +23,7 @@ fetch('content.yaml')
 
     // Embed YouTube iframe preview
 
-    if (video.link = "n") {
+    if (video.link == "n") {
       alert("Attention ! La vidéo pour ce tutoriel n'est pas disponible !")
       document.getElementById("tv").textContent = "Aïe aïe aïe ! Vidéo non disponible..."
       document.getElementById("tv").style = "color: red;"
