@@ -84,7 +84,7 @@ h2 {
     padding: 1rem;
     border: 5px dashed #000000;
     width: calc(100% - 4rem - 10px);
-    max-width: calc(700px - 2rem - 10px );
+    max-width: calc(1000px - 2rem - 10px );
 }
 
 h3, h4 {
@@ -95,7 +95,7 @@ h3, h4 {
     background-color: #000000;
     font-size: clamp(0.8rem, 1.8vw, 1.3rem);
     width: calc(100% - 4rem);
-    max-width: calc(700px - 2rem);
+    max-width: calc(1000px - 2rem);
 }
 
 h4 {
@@ -106,7 +106,7 @@ h4 {
     border-width: 5px;
     border-style: dashed;
     width: calc(100% - 4rem - 10px);
-    max-width: calc(700px - 2rem - 10px);
+    max-width: calc(1000px - 2rem - 10px);
 
 }
 
@@ -193,7 +193,7 @@ h4 {
     align-items: center;
     margin: 1rem;
     width: calc(100% - 2rem);
-    max-width: 700px;
+    max-width: 1000px;
 }
 
 #container1 div p {
@@ -220,7 +220,7 @@ h4 {
     border-top: none;
     margin-top: -1rem;
     width: calc(100% - 4rem - 10px);
-    max-width: calc(700px - 2rem - 10px );
+    max-width: calc(1000px - 2rem - 10px );
 }
 
 #container p a {
@@ -286,7 +286,7 @@ footer a {
 
 #video-container iframe {
     width: calc(100vw - 2rem);
-    max-width: 700px;
+    max-width: 1000px;
 	margin: 0.5rem;
     margin-top: -0.75rem;
 }
@@ -296,7 +296,7 @@ pre {
     margin: 0.5rem;
     margin-top: -1rem;
     width: calc(100% - 2rem);
-    max-width: 700px;
+    max-width: 1000px;
     
 }
 
@@ -307,7 +307,7 @@ pre code {
 
 /* Wizard */
 .wizard {
-    width: clamp(20rem, 76vw, 700px);
+    width: clamp(20rem, 76vw, 1000px);
 }
 
 /* Copy button */
