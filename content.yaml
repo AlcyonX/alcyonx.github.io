@@ -1,0 +1,76 @@
+# Comment désactiver les collisions sur roblox studio ?
+
+- title: Comment désactiver les collisions sur roblox studio ?
+  img: images/roblox.png
+  category: Roblox Studio
+  description: >
+    Lorsque l’on développe un jeu sur Roblox Studio, il est essentiel de surveiller
+    les performances pour garantir une expérience fluide aux joueurs. L’un des
+    indicateurs les plus importants à suivre est le nombre de FPS (frames per
+    second), qui permet de mesurer la fluidité d’affichage de votre jeu en temps
+    réel. Dans ce tutoriel, nous allons voir comment afficher les FPS directement
+    dans Roblox Studio, à l’aide d’un petit script Lua. Que vous soyez débutant ou
+    développeur confirmé, cette fonctionnalité vous aidera à identifier les
+    éventuels ralentissements et à optimiser votre jeu plus efficacement.
+  link: https://www.youtube.com/embed/nxmuFw0Ksz8
+  content:
+    - type: code
+      title: Local Script
+      language: lua-language
+      value: |
+        local PlayerService = game:GetService("Players")
+        PlayerService.PlayerAdded:Connect(function(player)
+          player.CharacterAdded:Connect(function(character)
+            for _, child in pairs(character:GetDescendants()) do
+              if child:IsA("BasePart") then
+                child.CollisionGroup = "PlayerPart"
+              end
+            end
+          end)
+        end)
+
+# Comment afficher les FPS sur Roblox Studio
+
+- title: Comment afficher les FPS sur Roblox Studio
+  img: images/roblox.png
+  category: Roblox Studio
+  description: >
+    Lorsque l’on développe un jeu sur Roblox Studio, il est essentiel de surveiller
+    les performances pour garantir une expérience fluide aux joueurs. L’un des
+    indicateurs les plus importants à suivre est le nombre de FPS (frames per
+    second), qui permet de mesurer la fluidité d’affichage de votre jeu en temps
+    réel. Dans ce tutoriel, nous allons voir comment afficher les FPS directement
+    dans Roblox Studio, à l’aide d’un petit script Lua. Que vous soyez débutant ou
+    développeur confirmé, cette fonctionnalité vous aidera à identifier les
+    éventuels ralentissements et à optimiser votre jeu plus efficacement.
+  link: https://www.youtube.com/embed/nxmuFw0Ksz8
+  content:
+    - type: code
+      title: Local Script
+      language: lua-language
+      value: |
+        local RunService = game:GetService("RunService")
+        -- FPS
+        local screen = Instance.new("ScreenGui", script.Parent)
+        local fpsLabel = Instance.new("TextLabel", screen)
+        fpsLabel.Size = UDim2.new(0, 200, 0, 50)
+        fpsLabel.Position = UDim2.new(0, 10, 0, 10)
+        fpsLabel.BackgroundTransparency = 1
+        fpsLabel.TextColor3 = Color3.new(1, 1, 1)
+        fpsLabel.TextScaled = true
+        fpsLabel.Font = Enum.Font.SourceSansBold
+        fpsLabel.Text = "FPS: 0"
+        -- Variables
+        local frameCount = 0
+        local timePassed = 0
+        -- Mise à jour des FPS toutes les secondes
+        RunService.RenderStepped:Connect(function(deltaTime)
+            frameCount += 1
+            timePassed += deltaTime
+            if timePassed >= 1 then
+                local fps = math.floor(frameCount / timePassed)
+                fpsLabel.Text = "FPS: " .. fps
+                frameCount = 0
+                timePassed = 0
+            end
+        end)

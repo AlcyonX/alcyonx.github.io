@@ -1,0 +1,357 @@
+@font-face {
+    font-family: "Minecraft";
+    src: url("Minecraft.ttf");
+}
+
+/* Dynamic background */
+body {
+    margin: 0;
+    height: 100vh;
+    background-size: 200px 200px;
+    background-position: 0 0, 0 100px, 100px -100px, -100px 0px;
+    animation: scroll-grid 10s linear infinite;
+    display: flex;
+    flex-direction: column;
+    font-family: "Minecraft";
+    letter-spacing: 1px;
+    line-height: 1.8;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Background colors */
+.blue {
+    background-color: #00FFFF;
+    background-image:
+        linear-gradient(45deg, #00CCFF 25%, transparent 25%),
+        linear-gradient(-45deg, #00CCFF 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #00CCFF 75%),
+        linear-gradient(-45deg, transparent 75%, #00CCFF 75%);
+}
+
+.purple {
+    background-color: #FF00FF;
+    background-image:
+        linear-gradient(45deg, #CC00FF 25%, transparent 25%),
+        linear-gradient(-45deg, #CC00FF 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #CC00FF 75%),
+        linear-gradient(-45deg, transparent 75%, #CC00FF 75%);
+}
+
+.grey {
+    background-color: #FFFFFF;
+    background-image:
+        linear-gradient(45deg, #CCCCCC 25%, transparent 25%),
+        linear-gradient(-45deg, #CCCCCC 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #CCCCCC 75%),
+        linear-gradient(-45deg, transparent 75%, #CCCCCC 75%);
+}
+
+@keyframes scroll-grid {
+    0% {
+        background-position:
+            0 0,
+            0 100px,
+            100px -100px,
+            -100px 0px;
+    }
+    100% {
+        background-position:
+            200px 200px,
+            200px 300px,
+            300px 100px,
+            100px 200px;
+    }
+}
+
+/* Titles */
+h1 {
+    text-align: center;
+    font-size: clamp(3rem, 10vw, 4rem);
+}
+
+h2 {
+    background: #FFFFFF;
+    text-align: center;
+    font-size: clamp(1rem, 5vw, 1.3rem);
+    margin: 0.5rem;
+    margin-top: 6rem;
+    padding: 1rem;
+    border: 5px dashed #000000;
+    width: calc(100% - 4rem - 10px);
+    max-width: calc(700px - 2rem - 10px );
+}
+
+h3, h4 {
+    text-align: left;
+    color: #FFFFFF;
+    padding: 1rem;
+    margin: 0.5rem;
+    background-color: #000000;
+    font-size: clamp(0.8rem, 1.8vw, 1.3rem);
+    width: calc(100% - 4rem);
+    max-width: calc(700px - 2rem);
+}
+
+h4 {
+
+    text-align: center;
+    background: #FF00FF;
+    color: #000000;
+    border-width: 5px;
+    border-style: dashed;
+    width: calc(100% - 4rem - 10px);
+    max-width: calc(700px - 2rem - 10px);
+
+}
+
+/* Navigation bar */
+.navbar {
+    display: flex;
+    position: fixed;
+    width: calc(100% - 2rem);
+    background: #000;
+    margin: 1rem;
+    align-items: center;
+    top: 0;
+}
+
+.navbar img {
+    height: 4rem;
+}
+
+.navbar a {
+    padding: 0.5rem 0;
+    font-size: clamp(1rem, 5vw, 1.3rem);;
+    text-decoration: none;
+    color: white;
+    margin: 3px;
+    width: 100%;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.navbar a:hover, .links a:hover, .menu-icon:hover, #container button:hover, #container1 button:hover, .copy-button:hover {
+    background-color: #FFFFFF;
+    color: black;
+}
+
+/* Menu */
+.menu-icon {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.menu-icon img {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* Container */
+#container, #container1 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#container1 div button, .copy-button {
+    margin: 0.5rem;
+    padding: 1rem;
+    font-size: clamp(0.8rem, 1vw, 1.25rem);
+    width: fit-content;
+    color: #000000;
+    background: #00FF00;
+    text-align: center;
+    transition: all 0.2s;
+    border: none;
+    font-family: "Minecraft";
+    margin: 1rem;
+    cursor: pointer;
+}
+
+#container1 img {
+    height: clamp(5rem, 12vw, 10rem);
+    padding: 2rem;
+    padding-right: 1rem;
+    margin: 0rem;
+}
+
+#container1 div {
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+    width: calc(100% - 2rem);
+    max-width: 700px;
+}
+
+#container1 div p {
+    color: #FFFFFF;
+    font-size: clamp(0.8rem, 2.2vw, 1.7rem);
+    text-align: center;
+    padding: 1rem;
+    padding-bottom: 0rem;
+    margin: 0.5rem;
+    
+}
+
+#container1 div .content {
+    width: 100%;
+}
+
+#container p, #description {
+    font-size: clamp(0.8rem, 1.5vw, 1.7rem);
+    text-align: justify;
+    margin: 0.5rem;
+    background: #FFFFFF;
+    padding: 1rem;
+    border: 5px dashed #000000;
+    border-top: none;
+    margin-top: -1rem;
+    width: calc(100% - 4rem - 10px);
+    max-width: calc(700px - 2rem - 10px );
+}
+
+#container p a {
+    text-decoration:none;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Profile picture */
+.pfp {
+    border-radius: 100%;
+    height: clamp(15rem, 25vw, 20rem);
+    margin: 1rem;
+    margin-top: 7rem;
+}
+
+/* Links */
+.links {
+    display: flex;
+    flex-direction: column;
+}
+
+.links a {
+    margin: 0.5rem;
+    padding: 1rem;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    width: clamp(1.5rem, 50vw, 15rem);
+    text-decoration: none;
+    color: white;
+    background: #000;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+/* Footer */
+footer {
+    background-color: #000000;
+    text-align: center;
+    color: white;
+    padding: 1rem;
+    margin-top: 20rem;
+}
+
+footer a {
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+}
+
+/* Pink text */
+.navbar .donate {
+    color: #FF00FF;
+}
+
+/* Embed YouTube video */
+#video-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#video-container iframe {
+    width: calc(100vw - 2rem);
+    max-width: 700px;
+	margin: 0.5rem;
+    margin-top: -0.75rem;
+}
+
+/* Code */
+pre {
+    margin: 0.5rem;
+    margin-top: -1rem;
+    width: calc(100% - 2rem);
+    max-width: 700px;
+    
+}
+
+pre code {
+    font-family: "Minecraft";
+    font-size: clamp(0.8rem, 1.5vw, 1.7rem);
+}
+
+/* Wizard */
+.wizard {
+    width: clamp(20rem, 76vw, 700px);
+}
+
+/* Copy button */
+
+.copy-button {
+    margin: 0rem;
+    padding: 0.5rem;
+    font-size: clamp(0.8rem, 1vw, 1rem);
+}
+
+/* Responsivity */
+@media only screen and (max-width: 768px) {
+    .menu-icon {
+        font-size: clamp(1rem, 5vw, 1.3rem);;
+        color: #FFFFFF;
+        background: #000;
+        width: 100%;
+        text-align: center;
+        display: block;
+        padding: 1rem;
+        margin-top: -1rem;
+        border-bottom: #151515 solid 3px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        background-color: black;
+        position: fixed;
+        top: 4.5rem;
+        z-index: 1000;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: all 0.4s ease;
+        margin: 0;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .navbar a {
+        border-bottom: #151515 solid 3px;
+        padding: 1rem;
+    }
+
+    #menu-toggle:checked ~ .menu-icon + .navbar {
+        transform: scaleY(1);
+    }
+}
