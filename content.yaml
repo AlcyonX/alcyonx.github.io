@@ -4,18 +4,15 @@
   img: images/roblox.png
   category: Roblox Studio
   description: >
-    Lorsque l’on développe un jeu sur Roblox Studio, il est essentiel de surveiller
-    les performances pour garantir une expérience fluide aux joueurs. L’un des
-    indicateurs les plus importants à suivre est le nombre de FPS (frames per
-    second), qui permet de mesurer la fluidité d’affichage de votre jeu en temps
-    réel. Dans ce tutoriel, nous allons voir comment afficher les FPS directement
-    dans Roblox Studio, à l’aide d’un petit script Lua. Que vous soyez débutant ou
-    développeur confirmé, cette fonctionnalité vous aidera à identifier les
-    éventuels ralentissements et à optimiser votre jeu plus efficacement.
-  link: https://www.youtube.com/embed/nxmuFw0Ksz8
+    Lorsque plusieurs joueurs se retrouvent dans un même jeu Roblox, leurs avatars peuvent se heurter les uns aux autres.
+    Cela peut poser problème dans certaines situations : passages étroits, mini-jeux, ou simplement pour améliorer la fluidité du gameplay.
+    Heureusement, Roblox Studio permet de désactiver facilement les collisions entre les joueurs.
+    Cette fonctionnalité permet d’éviter que les joueurs ne se bloquent ou se gênent involontairement.
+    Dans cet article, nous allons voir comment désactiver les collisions entre les avatars, pas à pas, pour offrir une expérience plus fluide et agréable à tous les joueurs.
+  link: n
   content:
     - type: code
-      title: Local Script
+      title: Script
       language: lua-language
       value: |
         local PlayerService = game:GetService("Players")

@@ -22,14 +22,21 @@ fetch('content.yaml')
     document.getElementById('description').textContent = video.description;
 
     // Embed YouTube iframe preview
-    const iframe = document.createElement('iframe');
-    iframe.height = 500;
-    iframe.src = video.link;
-    iframe.frameBorder = 0;
-    iframe.className = "youtube-video";
-    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-    iframe.allowFullscreen = true;
-    document.getElementById('video-container').appendChild(iframe);
+
+    if (video.link = "n") {
+      alert("Attention ! La vidéo pour ce tutoriel n'est pas disponible !")
+      document.getElementById("tv").textContent = "Aïe aïe aïe ! Vidéo non disponible..."
+      document.getElementById("tv").style = "color: red;"
+    } else {
+      const iframe = document.createElement('iframe');
+      iframe.height = 500;
+      iframe.src = video.link;
+      iframe.frameBorder = 0;
+      iframe.className = "youtube-video";
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+      document.getElementById('video-container').appendChild(iframe);
+    }
 
     // Affiche le contenu code s’il existe
     if (Array.isArray(video.content)) {
