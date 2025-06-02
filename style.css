@@ -178,7 +178,6 @@ h4 {
     font-family: "Minecraft";
     margin: 1rem;
     cursor: pointer;
-    margin-top: 0;
 }
 
 #container1 img {
@@ -193,23 +192,25 @@ h4 {
 }
 
 #container1 div {
+    overflow: hidden;
     background-color: #000;
     display: flex;
     align-items: center;
     margin: 0.5rem;
     width: calc(100% - 2rem);
+    max-width: calc(1000px + 1rem);
 }
 
 #container1 div h5 {
     color: #FFFFFF;
-    font-size: clamp(0.8rem, 2.2vw, 1.7rem);
+    font-size: clamp(0.8rem, 2.2vw, 1.2rem);
     margin: 01rem;
     
 }
 
 #container1 div p {
     color: #FFFF00;
-    font-size: clamp(0.5rem, 1.8vw, 1.3rem);
+    font-size: clamp(0.5rem, 1.8vw, 1rem);
     margin: 1rem;
     margin-top: 0;
 }
