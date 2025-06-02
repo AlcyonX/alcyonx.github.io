@@ -14,7 +14,7 @@ body {
     flex-direction: column;
     font-family: "Minecraft";
     letter-spacing: 1px;
-    line-height: 1.8;
+    line-height: 1.5;
 }
 
 main {
@@ -178,32 +178,40 @@ h4 {
     font-family: "Minecraft";
     margin: 1rem;
     cursor: pointer;
+    margin-top: 0;
 }
 
 #container1 img {
-    height: clamp(5rem, 12vw, 10rem);
-    padding: 2rem;
-    padding-right: 1rem;
-    margin: 0rem;
+
+    overflow: hidden;
+    height: 100%;
+    width: 50%;
+    -webkit-mask-image: linear-gradient(to left, transparent, black 100%);
+    mask-image: linear-gradient(to left, transparent, black 100%);
+    object-fit: cover;
+
 }
 
 #container1 div {
     background-color: #000;
     display: flex;
     align-items: center;
-    margin: 1rem;
+    margin: 0.5rem;
     width: calc(100% - 2rem);
-    max-width: 1000px;
+}
+
+#container1 div h5 {
+    color: #FFFFFF;
+    font-size: clamp(0.8rem, 2.2vw, 1.7rem);
+    margin: 01rem;
+    
 }
 
 #container1 div p {
-    color: #FFFFFF;
-    font-size: clamp(0.8rem, 2.2vw, 1.7rem);
-    text-align: center;
-    padding: 1rem;
-    padding-bottom: 0rem;
-    margin: 0.5rem;
-    
+    color: #FFFF00;
+    font-size: clamp(0.5rem, 1.8vw, 1.3rem);
+    margin: 1rem;
+    margin-top: 0;
 }
 
 #container1 div .content {
@@ -336,7 +344,7 @@ pre code {
         flex-direction: column;
         background-color: black;
         position: fixed;
-        top: 4.5rem;
+        top: 4rem;
         z-index: 1000;
         transform: scaleY(0);
         transform-origin: top;

@@ -9,9 +9,10 @@ fetch('content.yaml')
       const content = document.createElement("content");
       content.className = "content";
 
-      const title = document.createElement('p');
+      const title = document.createElement('h5');
       const btn = document.createElement('button');
       const img = document.createElement('img');
+      const p = document.createElement('p');
 
       btn.textContent = "Apprendre !";
       btn.onclick = () => {
@@ -22,8 +23,12 @@ fetch('content.yaml')
 
       title.textContent = video.title;
 
+      let resultat = video.description.length > 160 ? video.description.slice(0, 160) + "..." : video.description;
+      p.textContent = resultat
+
       div.appendChild(img);
       content.appendChild(title);
+      content.appendChild(p)
       content.appendChild(btn);
       div.appendChild(content);
       container.appendChild(div);
