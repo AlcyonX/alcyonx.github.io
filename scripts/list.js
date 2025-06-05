@@ -13,6 +13,8 @@ fetch('content.yaml')
       const btn = document.createElement('button');
       const img = document.createElement('img');
       const p = document.createElement('p');
+	  const footer = document.createElement('footer')
+	  footer.textContent = video.author + " • " + video.date + " • " + video.category;
 
       btn.textContent = "Apprendre !";
       btn.onclick = () => {
@@ -29,6 +31,7 @@ fetch('content.yaml')
       div.appendChild(img);
       content.appendChild(title);
       content.appendChild(p)
+	  content.appendChild(footer)
       content.appendChild(btn);
       div.appendChild(content);
       container.appendChild(div);

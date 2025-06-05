@@ -72,7 +72,10 @@ main {
 /* Titles */
 h1 {
     text-align: center;
-    font-size: clamp(3rem, 10vw, 4rem);
+    font-size: clamp(2rem, 7vw, 2.5rem);
+    padding: 0rem;
+    margin: 0rem;
+    padding-bottom: 0.5rem;
 }
 
 h2 {
@@ -119,6 +122,7 @@ h4 {
     margin: 1rem;
     align-items: center;
     top: 0;
+    overflow: hidden;
 }
 
 .navbar img {
@@ -165,6 +169,11 @@ h4 {
     flex-direction: column;
 }
 
+#container {
+    margin: 7rem;
+    height: 90vh;
+}
+
 #container1 div button, .copy-button {
     margin: 0.5rem;
     padding: 1rem;
@@ -178,6 +187,7 @@ h4 {
     font-family: "Minecraft";
     margin: 1rem;
     cursor: pointer;
+    
 }
 
 #container1 img {
@@ -209,12 +219,20 @@ h4 {
     
 }
 
-#container1 div p {
+#container1 div p,  #container1 div footer{
     color: #FFFF00;
     font-size: clamp(0.5rem, 1.8vw, 1rem);
     margin: 1rem;
     margin-top: 0;
 }
+
+#container1 div footer{
+    color: #AAAAAA;
+    font-size: clamp(0.5rem, 1.8vw, 1rem);
+	text-align: center;
+    margin: -1rem;
+}
+
 
 #container1 div .content {
     width: 100%;
@@ -246,9 +264,8 @@ h4 {
 /* Profile picture */
 .pfp {
     border-radius: 100%;
-    height: clamp(15rem, 25vw, 20rem);
+    height: clamp(10rem, 20vw, 15rem);
     margin: 1rem;
-    margin-top: 7rem;
 }
 
 /* Links */
@@ -259,9 +276,11 @@ h4 {
 
 .links a {
     margin: 0.5rem;
-    padding: 1rem;
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
-    width: clamp(1.5rem, 50vw, 15rem);
+    padding: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: clamp(1.2rem, 7%, 1.5rem);
+    width: 20vh;
     text-decoration: none;
     color: white;
     background: #000;
@@ -363,5 +382,11 @@ pre code {
 
     #menu-toggle:checked ~ .menu-icon + .navbar {
         transform: scaleY(1);
+    }
+
+    .navbar a:hover, .links a:hover, .menu-icon:hover, #container button:hover, #container1 button:hover, .copy-button:hover {
+    background-color: #FFFFFF;
+    color: black;
+    rotate: 0deg;
     }
 }

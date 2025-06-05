@@ -3,6 +3,8 @@
 - title: Comment désactiver les collisions entre les joueurs sur Roblox Studio?
   img: images/robloxstudio.jpg
   category: Roblox Studio
+  author: AlcyonX
+  date: 05/06/2025
   description: >
     Lorsque plusieurs joueurs se retrouvent dans un même jeu Roblox, leurs avatars peuvent se heurter les uns aux autres.
     Cela peut poser problème dans certaines situations : passages étroits, mini-jeux, ou simplement pour améliorer la fluidité du gameplay.
@@ -68,6 +70,8 @@
 - title: Comment afficher les FPS sur Roblox Studio?
   img: images/robloxstudio.jpg
   category: Roblox Studio
+  author: AlcyonX
+  date: 17/05/2025
   description: >
     Lorsque l’on développe un jeu sur Roblox Studio, il est essentiel de surveiller
     les performances pour garantir une expérience fluide aux joueurs. L’un des
